@@ -6,7 +6,7 @@ import re
 username = ""
 password = ""
 keywords = []
-limit = 10000
+limit = 1000
 
 login_form_url = "https://www.topcoder.com/reg2/showRegister.action"
 editorial_wiki_url = "http://apps.topcoder.com/wiki/display/tc/Algorithm+Problem+Set+Analysis"
@@ -86,8 +86,8 @@ def does_match(text):
 
     return False
 
-def get_matched_srms(driver, titles, urls):
-    matched_srms = []
+def get_matched_contests(driver, titles, urls):
+    matched_contests = []
     for i in range(0, len(urls)):
         title = titles[i]
         url = urls[i]
@@ -96,21 +96,21 @@ def get_matched_srms(driver, titles, urls):
         text = get_text_from_html(html)
 
         if does_match(text):
-            matched_srms.append((title, url))
+            matched_contests.append((title, url))
 
-        if len(matched_srms) >= limit:
+        if len(matched_contests) >= limit:
             break
 
-    return matched_srms
+    return matched_contests 
 
-def render_html(srms):
+def render_html(contests):
     file = open("index.html", "w+")
 
     file.write("<!DOCTYPE html>\n")
     file.write("<html>\n")
     file.write("<body>\n")
 
-    for (title, url) in srms:
+    for (title, url) in contests:
         file.write("<a href=\"" + url + "\">")
         file.write(title)
         file.write("</a>\n")
@@ -129,9 +129,9 @@ def main():
     titles = get_titles(driver, editorials)
     urls = get_urls(driver, editorials)
 
-    srms = get_matched_srms(driver, titles, urls)
+    contests = get_matched_contests(driver, titles, urls)
       
-    render_html(srms)
+    render_html(contests)
     driver.close()
 
 if __name__ == "__main__": main()
