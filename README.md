@@ -2,7 +2,7 @@
 
 > It's rough, it's messy, it's untidy, it's slow, it's not how you expect it to be, but still, it works!!
 
-Tag TopCoder is a script that finds topcoder problems by user-defined category.
+Tag TopCoder is a script that finds topcoder problems by user-defined tags/categories.
 
 The problem with topcoder's category is that it's too generic. Suppose, you want to find problems related to Network flow, but there's no category for it. The only way to find them is to look at every  problems under "Graph Theory" category. And there are thousands of them.
 
