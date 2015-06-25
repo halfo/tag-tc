@@ -28,7 +28,7 @@ password = ""
 keywords = ["probability", "expected value", "expectation"]
 ```
 
--  Maximum number of problems you want to find
+- Maximum number of problems you want to find.
 
 ```python
 limit = 10000 
