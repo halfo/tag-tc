@@ -4,7 +4,7 @@
 
 Tag TopCoder is a script that finds topcoder problems by user-defined tags/categories.
 
-The problem with topcoder's category is that it's too generic. Suppose, you want to find problems related to Network flow, but there's no category for it. The only way to find them is to look at every  problems under "Graph Theory" category. And there are thousands of them.
+The problem with topcoder's categories are that they are too generic. Suppose, you want to find problems related to Network flow, but there's no category for it. The only way to find them is to look at every  problems under "Graph Theory" category. And there are thousands of them.
 
 But, it is highly probable that a Network flow related problem's editorial page would contain the word "flow" atleast once. So, this script looks into every editorial page, search for given keywords (in this case - "flow") and list those pages where it has found a match. 
 
