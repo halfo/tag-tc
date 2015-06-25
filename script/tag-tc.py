@@ -5,8 +5,8 @@ import re
 
 username = ""
 password = ""
-patterns = [""]
-LIMIT = 5
+keywords = []
+limit = 10000
 
 login_form_url = "https://www.topcoder.com/reg2/showRegister.action"
 editorial_wiki_url = "http://apps.topcoder.com/wiki/display/tc/Algorithm+Problem+Set+Analysis"
@@ -79,9 +79,9 @@ def get_text_from_html(html):
     return h.handle(html)
 
 def does_match(text):
-    for pattern in patterns:
-        pattern = r"\b" + re.escape(pattern) + r"\b"
-        m = re.search(pattern, text, re.IGNORECASE)
+    for keyword in keywords:
+        keyword = r"\b" + re.escape(keyword) + r"\b"
+        m = re.search(keyword, text, re.IGNORECASE)
         if m != None: return True
 
     return False
@@ -98,7 +98,7 @@ def get_matched_srms(driver, titles, urls):
         if does_match(text):
             matched_srms.append((title, url))
 
-        if len(matched_srms) >= LIMIT:
+        if len(matched_srms) >= limit:
             break
 
     return matched_srms
