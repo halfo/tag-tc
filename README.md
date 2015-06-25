@@ -43,5 +43,5 @@ This script takes around ~40 minutes to run and create a html page containing li
 
 # About
 
-Developed by [Hasib Billah](https://github.com/halfo/).
+Developed by [Hasib Billah](https://github.com/halfo/).</br>
 Released under the [GNU GPL v2.0](https://en.wikipedia.org/wiki/GNU_General_Public_License#Version_2) license.
