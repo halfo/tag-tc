@@ -8,7 +8,7 @@ password = ""
 keywords = []
 limit = 1000
 
-login_form_url = "https://www.topcoder.com/reg2/showRegister.action"
+login_form_url = "https://community.topcoder.com/tc?&module=Login"
 editorial_wiki_url = "http://apps.topcoder.com/wiki/display/tc/Algorithm+Problem+Set+Analysis"
 
 def get_username():
@@ -29,7 +29,7 @@ def login_attempt(driver):
     get_username()
     get_password()
 
-    username_field = driver.find_element_by_name("handle")
+    username_field = driver.find_element_by_name("username")
     password_field = driver.find_element_by_name("password")
 
     username_field.send_keys(username)
@@ -65,7 +65,6 @@ def get_urls(driver, editorials):
         urls.append(url)
 
     return urls 
-
 def get_page_source(driver, editorial_url):
     driver.get(editorial_url)
     return driver.page_source
